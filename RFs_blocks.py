@@ -47,7 +47,7 @@ def outFromIn(conv, layerIn):
         pL = math.floor(actualP/2)                          # 返回下限
       
         j_out = j_in * s                                    # stride
-        r_out = r_in + (k - 1)*j_in                         # 计算的是当前层的感受野
+        r_out = r_in + d*(k - 1)*j_in                         # 计算的是当前层的感受野
         start_out = start_in + ((k-1)/2 - pL)*j_in          # 当这一层是stride convolution / pool时，第一个feature map的起点start会改变
 
         # 为下一轮准备
